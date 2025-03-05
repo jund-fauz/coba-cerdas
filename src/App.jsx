@@ -1,13 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import Home from './components/Home'
 import Quiz from './components/Quiz'
 import About from './components/About'
+import './App.css'
 
 function App() {
+  const [darkMode, setDarkMode] = useState(false)
+
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode)
+  }
+
   return (
     <Router>
-      <div className="App">
+      <div className={`App ${darkMode ? 'dark-mode' : ''}`}>
         <header>
           <h1>CobaCerdas</h1>
           <nav>
@@ -17,6 +24,9 @@ function App() {
               <li><Link to="/about">Tentang</Link></li>
             </ul>
           </nav>
+          <button onClick={toggleDarkMode} className="toggle-btn">
+            {darkMode ? 'Light Mode' : 'Night Mode'}
+          </button>
         </header>
         <main>
           <Routes>

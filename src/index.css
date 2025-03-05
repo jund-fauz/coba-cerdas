@@ -3,12 +3,14 @@ body {
   margin: 0;
   padding: 0;
   background-color: #f2f2f2;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .App {
   text-align: center;
 }
 
+/* Gaya untuk mode siang */
 header {
   background-color: #282c34;
   padding: 1rem;
@@ -21,11 +23,11 @@ nav ul {
   display: flex;
   gap: 1rem;
   justify-content: center;
-  
-  & li a {
-    color: white;
-    text-decoration: none;
-  }
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
 }
 
 main {
@@ -48,8 +50,39 @@ button {
   color: white;
   cursor: pointer;
   border-radius: 3px;
+  transition: background-color 0.3s ease;
+}
 
-  &:hover {
-    background-color: #3b3f47;
-  }
+button:hover {
+  background-color: #3b3f47;
+}
+
+/* Gaya untuk mode malam */
+.dark-mode body,
+.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+.dark-mode header {
+  background-color: #1f1f1f;
+}
+
+.dark-mode .quiz {
+  background: #1f1f1f;
+  color: #e0e0e0;
+}
+
+.dark-mode nav ul li a {
+  color: #e0e0e0;
+}
+
+.dark-mode button {
+  background-color: #3b3f47;
+}
+
+.toggle-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
 }
