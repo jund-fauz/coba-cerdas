@@ -1,13 +1,12 @@
-import React from 'react';
-import { Users, Clock } from 'lucide-react';
+import { Users, Clock } from 'lucide-react'
 
 interface CourseCardProps {
-  title: string;
-  description: string;
-  students: number;
-  duration: string;
-  level: string;
-  image: string;
+  title: string
+  description: string
+  students: number
+  duration: string
+  level: string
+  image: string
 }
 
 export default function CourseCard({ title, description, students, duration, level, image }: CourseCardProps) {
@@ -32,5 +31,5 @@ export default function CourseCard({ title, description, students, duration, lev
         </div>
       </div>
     </div>
-  );
+  )
 }
